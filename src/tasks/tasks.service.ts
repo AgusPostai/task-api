@@ -10,7 +10,7 @@ export class TasksService {
   constructor(@InjectModel(Task.name) private TaskModel: Model<Task>) {}
 
   findAll() {
-    this.TaskModel.find();
+    return this.TaskModel.find();
   }
 
   async create(createTask: CreateTaskDto) {
