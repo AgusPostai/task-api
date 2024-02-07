@@ -20,8 +20,8 @@ export class TasksController {
   }
 
   @Get()
-  findOne() {
-    return 'Get one tasks';
+  findOne(@Param('id') id: string) {
+    return this.tasksService.findOne(id);
   }
 
   @Post()
@@ -32,10 +32,10 @@ export class TasksController {
   @Delete(':id')
   delete(@Param('id') id: string) {
     return this.tasksService.delete(id);
-  }
+  } 
 
   @Put()
-  update() {
-    return 'Update task';
+  update(@Param('id') id: string, @Body() body : any ){
+    return this.tasksService.update(id, body);
   }
 }
