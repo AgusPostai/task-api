@@ -48,7 +48,6 @@ export class TasksController {
     if (!task) throw new NotFoundException('Task not found');
     return;
   }
-
   @Put()
   async update(@Param('id') id: string, @Body() body: any) {
     const task = await this.tasksService.update(id, body);
